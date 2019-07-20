@@ -9,6 +9,8 @@ import { GiphyService } from './service/giphy.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NavComponent } from './nav/nav.component';
 
+import {NgxPaginationModule} from 'ngx-pagination';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +21,8 @@ import { NavComponent } from './nav/nav.component';
   imports: [
     BrowserModule,
     FormsModule ,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [GiphyService],
   bootstrap: [AppComponent]

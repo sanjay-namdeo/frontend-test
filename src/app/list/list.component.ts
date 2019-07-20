@@ -24,6 +24,7 @@ giphyData: any[];
       const result = this.giphyService.getData();
       this.giphyData = result.data;
       this.collectionSize = result.collectionSize;
+      this.page = result.pageNumber;
     });
   }
 
@@ -37,6 +38,5 @@ giphyData: any[];
 
   onPageChange(pageNumber: number) {
     this.giphyService.changePage(pageNumber);
-    this.page = pageNumber;
   }
 }

@@ -15,16 +15,19 @@ export class GiphyService {
 
   // Get image data
   getData(): any {
+    const offset = this.giphyData.pagination.offset;
+    const pageNumber = offset === 0 ? 1 : ((offset + PAGE_SIZE) / PAGE_SIZE);
     return {
       data: this.giphyData.data,
       collectionSize: this.giphyData.pagination.total_count,
+      pageNumber
     };
   }
 
   // Search giphy and update to observers
   search(query) {
     this.searchTerm = query;
-    const SEARCH_URL = `${GIPHY_HOST_URL}${GIPHY_SEARCH_QUERY}?api_key=${GIPHY_API_KEY}&limit=9&q=${query}`;
+    const SEARCH_URL = `${GIPHY_HOST_URL}${GIPHY_SEARCH_QUERY}?api_key=${GIPHY_API_KEY}&limit=9&offset=0&q=${query}`;
     this.http.get(SEARCH_URL).subscribe(res => {
       this.giphyData = res;
       this.resultChanged.next(res);

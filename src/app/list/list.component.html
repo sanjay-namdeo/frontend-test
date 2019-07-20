@@ -1,7 +1,7 @@
 <div class="album py-5 bg-light">
   <div class="container">
     <div class="row">
-      <div class="col-md-4" *ngFor="let obj of giphyData">
+      <div class="col-md-4" *ngFor="let obj of giphyData | paginate: { itemsPerPage: pageSize, currentPage: page, totalItems: collectionSize }">
         <div class="card mb-4 box-shadow">
           <img class="card-img-top" [src]='createFullUrl(obj.id)' alt="Card image cap" width="150px" height="350px">
           <div class="card-body">
@@ -13,3 +13,4 @@
   </div>
 </div>
 <hr>
+<pagination-controls *ngIf="collectionSize>0" (pageChange)="onPageChange($event)" class="d-flex justify-content-center"></pagination-controls>
