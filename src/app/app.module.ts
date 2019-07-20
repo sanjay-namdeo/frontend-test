@@ -7,12 +7,14 @@ import { SearchComponent } from './search/search.component';
 import { ListComponent } from './list/list.component';
 import { GiphyService } from './service/giphy.service';
 import { HttpClientModule } from '@angular/common/http';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
-    ListComponent
+    ListComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
