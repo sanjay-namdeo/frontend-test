@@ -2,12 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-4" *ngFor="let obj of giphyData | paginate: { itemsPerPage: pageSize, currentPage: page, totalItems: collectionSize }">
-        <div class="card mb-4 box-shadow">
-          <img class="card-img-top" [src]='createFullUrl(obj.id)' alt="Card image cap" width="150px" height="350px">
-          <div class="card-body">
-            <p class="card-text">{{obj.slug}}</p>
-          </div>
-        </div>
+        <app-list-item [giphy]="obj"></app-list-item>
       </div>
     </div>
   </div>

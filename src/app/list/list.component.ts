@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
-import { PAGE_SIZE,  getFullUrl } from './../shared/constants';
+import { PAGE_SIZE } from './../shared/constants';
 import { GiphyService } from './../service/giphy.service';
 
 @Component({
@@ -30,10 +30,6 @@ giphyData: any[];
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
-  }
-
-  createFullUrl = gifId => {
-    return getFullUrl(gifId);
   }
 
   onPageChange(pageNumber: number) {

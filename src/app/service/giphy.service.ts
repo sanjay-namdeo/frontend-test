@@ -36,11 +36,15 @@ export class GiphyService {
 
   // Called from pagination to switch between pages
   changePage(pageNumber: number) {
-    const offset = (pageNumber - 1)  * PAGE_SIZE;
+    const offset = (pageNumber - 1) * PAGE_SIZE;
     const SEARCH_URL = `${GIPHY_HOST_URL}${GIPHY_SEARCH_QUERY}?api_key=${GIPHY_API_KEY}&limit=9&offset=${offset}&q=${this.searchTerm}`;
     this.http.get(SEARCH_URL).subscribe(res => {
       this.giphyData = res;
       this.resultChanged.next(res);
     });
   }
+
+  getFullUrl(gifId) {
+    return `https://media.giphy.com/media/${gifId}/giphy.gif`;
+  };
 }

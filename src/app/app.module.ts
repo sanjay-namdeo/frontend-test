@@ -10,13 +10,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavComponent } from './nav/nav.component';
 
 import {NgxPaginationModule} from 'ngx-pagination';
+import { ListItemComponent } from './list-item/list-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
     ListComponent,
-    NavComponent
+    NavComponent,
+    ListItemComponent
   ],
   imports: [
     BrowserModule,
