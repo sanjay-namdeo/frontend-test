@@ -8,4 +8,9 @@
   </div>
 </div>
 <hr>
-<pagination-controls *ngIf="collectionSize>0" (pageChange)="onPageChange($event)" class="d-flex justify-content-center"></pagination-controls>
+<pagination-controls
+*ngIf="collectionSize>0"
+(pageChange)="onPageChange($event)"
+class="d-flex justify-content-center"
+responsive="true"
+autoHide="true"></pagination-controls>
