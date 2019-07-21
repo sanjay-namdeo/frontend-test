@@ -1,12 +1,32 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { NavComponent } from './nav/nav.component';
+import { SearchComponent } from './search/search.component';
+import { ListComponent } from './list/list.component';
+import { ListItemComponent } from './list-item/list-item.component';
+import { HttpClientModule } from '@angular/common/http';
+import { GiphyService } from './service/giphy.service';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        SearchComponent,
+        ListComponent,
+        NavComponent,
+        ListItemComponent
       ],
+      imports: [
+        BrowserModule,
+        FormsModule,
+        HttpClientModule,
+        NgxPaginationModule
+      ],
+      providers: [GiphyService]
     }).compileComponents();
   }));
 
@@ -20,12 +40,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('frontend-test');
-  });
-
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to frontend-test!');
   });
 });
