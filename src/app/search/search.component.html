@@ -9,11 +9,11 @@
           <!--end of col-->
           <div class="col">
             <input class="form-control form-control-lg form-control-borderless" placeholder="Search topics or keywords"
-              name="query-input" [(ngModel)]="query">
+              name="query-input" [(ngModel)]="query" #input="ngModel" required id="query-input">
           </div>
           <!--end of col-->
           <div class="col-auto">
-            <button class="btn btn-lg btn-success" type="submit">Search</button>
+            <button class="btn btn-lg btn-success" type="submit" [disabled]="input.invalid">Search</button>
           </div>
           <!--end of col-->
         </div>
