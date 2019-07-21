@@ -34,5 +34,6 @@ giphyData: any[];
 
   onPageChange(pageNumber: number) {
     this.giphyService.changePage(pageNumber);
+    window.scrollTo(0, 0);
   }
 }
