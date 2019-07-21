@@ -7,7 +7,7 @@ import { GiphyService } from '../service/giphy.service';
   styleUrls: ['./list-item.component.sass']
 })
 export class ListItemComponent implements OnInit {
-  @Input() giphy: {id: string, slug: string};
+  @Input() giphy: {id: string, title: string};
 
   constructor(private giphyService: GiphyService) { }
 
