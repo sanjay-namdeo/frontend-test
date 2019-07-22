@@ -1,4 +1,4 @@
-export const GIPHY_API_KEY = 'WmgaR2KQZltCrjx5SlTQODH0gsiqnKDN';
+export const GIPHY_API_KEY = '<replace this with api key>';
 
 export const GIPHY_HOST_URL = 'https://api.giphy.com';
 
