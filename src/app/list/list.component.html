@@ -1,0 +1,16 @@
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let obj of giphyData | paginate: { itemsPerPage: pageSize, currentPage: page, totalItems: collectionSize }">
+        <app-list-item [giphy]="obj"></app-list-item>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+<pagination-controls
+*ngIf="collectionSize>0"
+(pageChange)="onPageChange($event)"
+class="d-flex justify-content-center"
+responsive="true"
+autoHide="true"></pagination-controls>
